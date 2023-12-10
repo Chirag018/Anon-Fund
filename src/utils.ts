@@ -5,7 +5,7 @@ import { BigNumberish, AnonAadhaarPCD } from "anon-aadhaar-pcd";
 
 export const getTotalVotes = async (): Promise<number> => {
   const provider = ethers.getDefaultProvider(
-    `https://goerli.infura.io/v3/${process.env.NEXT_PUBLIC_GOERLI_PROVIDER_ID}`
+    `https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_SEPOLIA_PROVIDER_ID}`
   );
   const voteContract = new ethers.Contract(
     "0x" + process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
