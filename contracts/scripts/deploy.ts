@@ -8,7 +8,7 @@ async function main() {
   const _verifierAddress = verifier.getAddress();
 
   const appId = BigInt(
-    "609246576999142755181287323616835836365844250624"
+    "547981702587044957664170598089292540963614359552"
   ).toString();
 
   const anonAadhaarVerifier = await ethers.deployContract(
@@ -19,15 +19,15 @@ async function main() {
 
   const _anonAadhaarVerifierAddress = anonAadhaarVerifier.getAddress();
 
-  const vote = await ethers.deployContract("Vote", [
-    "Do you like this app?",
-    ["0", "1", "2", "3", "4", "5"],
+  const stream = await ethers.deployContract("Streamer", [
+    "Would you like to crowdfund for the needy, whom and where would you like fund",
+    [&input1,&input2,&input3],
     _anonAadhaarVerifierAddress,
   ]);
 
-  await vote.waitForDeployment();
+  await stream.waitForDeployment();
 
-  console.log(`Vote contract deployed to ${await vote.getAddress()}`);
+  console.log(`Streamer contract deployed to ${await stream.getAddress()}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
